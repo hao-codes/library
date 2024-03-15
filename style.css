@@ -14,11 +14,18 @@ body {
 }
 
 .main {
-    
+    background-color: white;
 }
 
 .book-table {
     flex: grid;
+    background-color: aqua;
+}
+
+
+.bookcard {
+    background-color: white;
+    color: blue;
 }
 
 button, .add-Button {

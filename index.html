@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
 
     <!--
@@ -31,13 +31,13 @@
         <label for="pages">Pages</label> <br>
         <input type="text" id="pages" name="pages"> <br>
         <label for="readingStatus">Reading Status: </label> <br>
-        <input list="readingStatus" name="readingStatus">
-        <datalist id="readingStatus"> <br>
-            <option value="not started reading">
-            <option value="currently reading">
-            <option value="finished reading">
+        <select name="readingStatus" id="readingStatus">
 
-        </datalist>
+            <option value="not"> not started</option>
+            <option value="currently"> currently reading</option>
+            <option value="finished"> finished</option>
+
+        </select>
 
 
 
@@ -47,6 +47,8 @@
 
             </button>
         </form>
+        <h3>Books in Library</h3>
+
         <div class="book-table">
             <!-- create function to display books in table
  add delete button to delete book from array and table-->
