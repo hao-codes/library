@@ -19,16 +19,37 @@
 
 <body>
     <div class="header">
-        <h1>Library</h1>
+        <h1>My Library</h1>
     </div>
 
 
     <div class="main">
-        <button id="add-book" name="Add Book">Add Book</button>
+        <label for="title">Book Title:</label><br>
+        <input type="text" id="title" name="title"><br>
+        <label for="author">Author:</label><br>
+        <input type="text" id="author" name="author"><br>
+        <label for="pages">Pages</label> <br>
+        <input type="text" id="pages" name="pages"> <br>
+        <label for="readingStatus">Reading Status: </label> <br>
+        <input list="readingStatus" name="readingStatus">
+        <datalist id="readingStatus"> <br>
+            <option value="not started reading">
+            <option value="currently reading">
+            <option value="finished reading">
 
-        </button>
+        </datalist>
+
+
+
+        <form class="addBook">
+            <!--create form for adding book to array-->
+            <button id="add-Button" name="Add Book">Add Book</button>
+
+            </button>
+        </form>
         <div class="book-table">
-
+            <!-- create function to display books in table
+ add delete button to delete book from array and table-->
         </div>
     </div>
     <div class="footer"> Made by: <a href="https://github.com/hao-codes"> <img id="githublogo" src="githublogo.png"

@@ -10,18 +10,18 @@ body {
 }
 
 .header {
-    background-color: ;
+    background-color: white;
 }
 
 .main {
-    background-color:;
+    
 }
 
 .book-table {
     flex: grid;
 }
 
-button, .add-book {
+button, .add-Button {
     border-radius: 13px;
     cursor: pointer;
     padding: 5px;
