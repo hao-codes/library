@@ -7,17 +7,58 @@ body {
     
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
+    margin: 0%;
 }
 
 .header {
-    background-color: white;
+    
 }
 
 .main {
     background-color: white;
+    margin: 0px;
+    padding: 0%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
+.addingBook {
+    
+    text-align: center;
+    border-style: solid;
+    margin: 20px 30% 20px 30%;
+
+}
+
+.addBook {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.addBook input[type="submit"] {
+    width: 100px; 
+    padding: 10px;
+    background-color: lightgrey;
+    color: black;
+    border: solid;
+    border-radius: 13px;
+    cursor: pointer;
+    margin: 15px;
+    font-size: 16px;
+    border-width: 1px;
+}
+
+.addBook input[type="text"],
+.addBook select {
+    width: 50%; 
+    margin: 0px 20px 5px 20px;
+
+}
 .book-table {
+
     flex: grid;
     background-color: white;
     border-color: blue;
@@ -27,12 +68,16 @@ body {
 }
 
 
+#overviewTitle {
+    padding-left: 30px;
+}
 .bookcard {
     background-color: white;
     color: blue;
     border-color: black;
     border-width: 1px;
     border-style: solid;
+    padding: 0px 15px 20px 15px;
 }
 
 button, .add-Button {

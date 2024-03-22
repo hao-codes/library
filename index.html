@@ -24,30 +24,32 @@
 
 
     <div class="main">
-        <form class="addBook">
-            <label for="title">Book Title:</label><br>
-            <input type="text" id="title" name="title" required><br>
-            <label for="author">Author:</label><br>
-            <input type="text" id="author" name="author" required><br>
-            <label for="pages">Pages</label> <br>
-            <input type="text" id="pages" name="pages"> <br>
-            <label for="readingStatus">Reading Status: </label> <br>
-            <select name="readingStatus" id="readingStatus">
+        <div class="addingBook">
+            <form class="addBook">
+                <label for="title">Book Title:</label><br>
+                <input type="text" id="title" name="title" required><br>
+                <label for="author">Author:</label><br>
+                <input type="text" id="author" name="author" required><br>
+                <label for="pages">Pages</label> <br>
+                <input type="text" id="pages" name="pages"> <br>
+                <label for="readingStatus">Reading Status: </label> <br>
+                <select name="readingStatus" id="readingStatus">
 
-                <option value="not"> not started</option>
-                <option value="currently"> currently reading</option>
-                <option value="finished"> finished</option>
+                    <option value="not"> not started</option>
+                    <option value="currently"> currently reading</option>
+                    <option value="finished"> finished</option>
 
-            </select>
+                </select>
 
 
 
-            <!--create form for adding book to array-->
-            <input type="submit" id="add-book" value="Add Book">
+                <!--create form for adding book to array-->
+                <input type="submit" id="add-book" value="Add Book">
 
-            </button>
-        </form>
-        <h3>Books in Library</h3>
+                </button>
+            </form>
+        </div>
+        <h2 id="overviewTitle">Books in Library</h2>
 
         <div class="book-table">
             <!-- create function to display books in table
