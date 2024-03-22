@@ -1,18 +1,16 @@
 body {
-    background-color: bisque;
+    background-color:white;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    
+
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     margin: 0%;
 }
 
-.header {
-    
-}
+.header {}
 
 .main {
     background-color: white;
@@ -24,22 +22,26 @@ body {
 }
 
 .addingBook {
-    
+
     text-align: center;
     border-style: solid;
-    margin: 20px 30% 20px 30%;
-
+    margin: 20px 40% 20px 40%;
+    border-style: solid;
+    border-radius: 13px;
+    box-shadow: none;
+    border-color: lightblue;
 }
 
 .addBook {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10px;
 
 }
 
 .addBook input[type="submit"] {
-    width: 100px; 
+    width: 100px;
     padding: 10px;
     background-color: lightgrey;
     color: black;
@@ -49,14 +51,21 @@ body {
     margin: 15px;
     font-size: 16px;
     border-width: 1px;
+
 }
 
 .addBook input[type="text"],
 .addBook select {
-    width: 50%; 
-    margin: 0px 20px 5px 20px;
+    width: 50%;
+    margin: 0px 10px 5px 10px;
+    border-style: solid;
+    border-radius: 5px;
 
 }
+.addBook label {
+
+}
+
 .book-table {
 
     flex: grid;
@@ -64,13 +73,15 @@ body {
     border-color: blue;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
+    padding: 0 10% 0 10%;
+    gap: 15px;
 }
 
 
 #overviewTitle {
     padding-left: 30px;
 }
+
 .bookcard {
     background-color: white;
     color: blue;
@@ -78,6 +89,11 @@ body {
     border-width: 1px;
     border-style: solid;
     padding: 0px 15px 20px 15px;
+}
+
+.bookcard p,
+.bookcard  {
+    margin: 10px 0 10px 0;
 }
 
 button, .add-Button {
@@ -96,6 +112,7 @@ img, #githublogo {
     position: absolute;
     bottom: 0;
     text-align: center;
+    background-color: white;
 }
 
 a:link, a:visited {

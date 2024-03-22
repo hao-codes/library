@@ -12,8 +12,8 @@ function Book(title, author, pages, readStatus) {
   // the constructor...
 }
 // add some default books to array to display
-const redRising = new Book("Red Rising", "Pierce Brown", 382, "finished reading")
-const goldenSon = new Book("Golden Son", "Pierce Brown", 464, "currently reading")
+const redRising = new Book("Red Rising", "Pierce Brown", 382, "finished")
+const goldenSon = new Book("Golden Son", "Pierce Brown", 464, "reading")
 const morningStar = new Book("Morning Star", "Pierce brown", 525, "not started")
 
 
@@ -32,7 +32,7 @@ const bookTable = document.querySelector(".book-table");
 const addBookButton = document.querySelector("#add-book");
 
 function updateBookStatus() {
-  
+
 }
 
 function createBookOverview(books) {
@@ -55,15 +55,18 @@ function createBookOverview(books) {
       <h3>${books[i].title}</h3>
       <p>Author: ${books[i].author}</p>
       <p>Pages: ${books[i].pages}</p>
-      <p> Reading Status: <select name="readingStatus" id="readingStatus">
+      <p> Status: ${books[i].readStatus}</p>
+      <button onclick="updateBookStatus()">Update Status</button>
+      <p>
+      <select name="readingStatus" id="readingStatus">
 
       <option value="not"> not started</option>
-      <option value="currently"> currently reading</option>
+      <option value="currently"> reading</option>
       <option value="finished"> finished</option>
 
   </select> 
   </p>
-      <button onclick="updateBookStatus()">Update Status</button>
+      
       
     `;
 
@@ -95,7 +98,7 @@ function addBook() {
     pages: newPages,
     readStatus: newStatus
   });
-  console.log(myLibrary);
+  //console.log(myLibrary);
 }
 
 
