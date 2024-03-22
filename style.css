@@ -19,7 +19,7 @@ body {
 
 .book-table {
     flex: grid;
-    background-color: aqua;
+    background-color: white;
     border-color: blue;
     display: grid;
     grid-template-columns: repeat(4, 1fr);

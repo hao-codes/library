@@ -30,6 +30,11 @@ function addBookToLibrary() {
 const bookTable = document.querySelector(".book-table");
 
 const addBookButton = document.querySelector("#add-book");
+
+function updateBookStatus() {
+  
+}
+
 function createBookOverview(books) {
   // loop through array
   // display books in div class
@@ -45,9 +50,23 @@ function createBookOverview(books) {
   for (let i = 0; i < numberBooks; i++) {
     let bookCardDiv = document.createElement("div");
     bookCardDiv.className = "bookcard";
-    bookCardDiv.classList
-    bookCardDiv.innerHTML = "Title: " + books[i].title + "Author: " + books[i].author + " Pages: " + books[i].pages + " Reading Status: " + books[i].readStatus
-    
+    //bookCardDiv.classList
+    bookCardDiv.innerHTML = `
+      <h3>${books[i].title}</h3>
+      <p>Author: ${books[i].author}</p>
+      <p>Pages: ${books[i].pages}</p>
+      <p> Reading Status: <select name="readingStatus" id="readingStatus">
+
+      <option value="not"> not started</option>
+      <option value="currently"> currently reading</option>
+      <option value="finished"> finished</option>
+
+  </select> 
+  </p>
+      <button onclick="updateBookStatus()">Update Status</button>
+      
+    `;
+
     bookTable.appendChild(bookCardDiv);
   }
   // loop through book array 
@@ -68,7 +87,7 @@ function addBook() {
   const newStatus = document.getElementById("readingStatus");
 
 
-  
+
   // Add the values to the array
   myLibrary.push({
     title: newTitle,
@@ -78,6 +97,14 @@ function addBook() {
   });
   console.log(myLibrary);
 }
+
+
+
+// TODO:
+// Add a button on each book’s display to remove the book from the library.
+// You will need to associate your DOM elements with the actual book objects in some way. One easy solution is giving them a data-attribute that corresponds to the index of the library array.
+// Add a button on each book’s display to change its read status.
+// To facilitate this you will want to create the function that toggles a book’s read status on your Book prototype instance.
 
 console.log(myLibrary);
 addBookButton.addEventListener('click', addBook);
