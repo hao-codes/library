@@ -24,26 +24,27 @@
 
 
     <div class="main">
-        <label for="title">Book Title:</label><br>
-        <input type="text" id="title" name="title"><br>
-        <label for="author">Author:</label><br>
-        <input type="text" id="author" name="author"><br>
-        <label for="pages">Pages</label> <br>
-        <input type="text" id="pages" name="pages"> <br>
-        <label for="readingStatus">Reading Status: </label> <br>
-        <select name="readingStatus" id="readingStatus">
-
-            <option value="not"> not started</option>
-            <option value="currently"> currently reading</option>
-            <option value="finished"> finished</option>
-
-        </select>
-
-
-
         <form class="addBook">
+            <label for="title">Book Title:</label><br>
+            <input type="text" id="title" name="title" required><br>
+            <label for="author">Author:</label><br>
+            <input type="text" id="author" name="author" required><br>
+            <label for="pages">Pages</label> <br>
+            <input type="text" id="pages" name="pages"> <br>
+            <label for="readingStatus">Reading Status: </label> <br>
+            <select name="readingStatus" id="readingStatus">
+
+                <option value="not"> not started</option>
+                <option value="currently"> currently reading</option>
+                <option value="finished"> finished</option>
+
+            </select>
+
+
+
+
             <!--create form for adding book to array-->
-            <button id="add-Button" name="Add Book">Add Book</button>
+            <input type="submit" id="add-book" value="Add Book">
 
             </button>
         </form>

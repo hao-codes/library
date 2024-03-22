@@ -20,12 +20,19 @@ body {
 .book-table {
     flex: grid;
     background-color: aqua;
+    border-color: blue;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
 }
 
 
 .bookcard {
     background-color: white;
     color: blue;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
 }
 
 button, .add-Button {
