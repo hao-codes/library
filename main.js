@@ -19,14 +19,11 @@ const morningStar = new Book("Morning Star", "Pierce brown", 525, "not started")
 
 const myLibrary = [redRising, goldenSon, morningStar];
 
-
-console.log(myLibrary);
-
 function addBookToLibrary() {
   // do stuff here
 
 };
-//const bookTable = document.getElementsByClassName("book-table");
+
 const bookTable = document.querySelector(".book-table");
 
 const addBookButton = document.querySelector("#add-book");
@@ -58,23 +55,19 @@ function createBookOverview(books) {
       <p> Status: ${books[i].readStatus}</p>
       <button onclick="updateBookStatus()">Update Status</button>
       <p>
-      <select name="readingStatus" id="readingStatus">
+      <select name="readingStatusUpdate" id="readingStatusUpdate">
 
       <option value="not"> not started</option>
       <option value="currently"> reading</option>
       <option value="finished"> finished</option>
 
   </select> 
-  </p>
-      
-      
+  </p>  
     `;
 
     bookTable.appendChild(bookCardDiv);
   }
   // loop through book array 
-
-
 
 
 }
@@ -84,21 +77,23 @@ createBookOverview(myLibrary);
 
 function addBook() {
   // Get the input elements
-  const newTitle = document.getElementById("title");
+  const newTitle = document.getElementById("booktitle");
   const newAuthor = document.getElementById("author");
   const newPages = document.getElementById("pages");
   const newStatus = document.getElementById("readingStatus");
 
+  console.log(newTitle);
 
-
+  if (newTitle.value != '' && newAuthor.value != '') {
   // Add the values to the array
   myLibrary.push({
-    title: newTitle,
-    author: newAuthor,
-    pages: newPages,
-    readStatus: newStatus
+    title: newTitle.value,
+    author: newAuthor.value,
+    pages: newPages.value,
+    readStatus: newStatus.value
   });
-  //console.log(myLibrary);
+}
+  console.log(myLibrary);
 }
 
 

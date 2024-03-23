@@ -8,13 +8,6 @@
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
 
-    <!--
-        header
-        body
-        table for boos -> card
-
-        footer
-    -->
 </head>
 
 <body>
@@ -25,9 +18,9 @@
 
     <div class="main">
         <div class="addingBook">
-            <form class="addBook">
-                <label for="title">Book Title:</label>
-                <input type="text" id="title" name="title" required>
+            <form class="addBook"  onsubmit="addBook(); return false;">
+                <label for="booktitle">Book Title:</label>
+                <input type="text" id="booktitle" name="title" required>
                 <label for="author">Author:</label>
                 <input type="text" id="author" name="author" required>
                 <label for="pages">Pages</label> 
@@ -35,8 +28,8 @@
                 <label for="readingStatus">Reading Status: </label> 
                 <select name="readingStatus" id="readingStatus">
 
-                    <option value="not"> not started</option>
-                    <option value="currently">  reading</option>
+                    <option value="not started"> not started</option>
+                    <option value="reading">  reading</option>
                     <option value="finished"> finished</option>
 
                 </select>
