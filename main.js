@@ -55,7 +55,7 @@ function createBookOverview(books) {
       <p> Status: ${books[i].readStatus}</p>
       <button onclick="updateBookStatus()">Update Status</button>
       <p>
-      <select name="readingStatusUpdate" id="readingStatusUpdate">
+      <select name="cardStatusUpdate" id="cardStatusUpdate#${i}">
 
       <option value="not"> not started</option>
       <option value="currently"> reading</option>
@@ -85,15 +85,16 @@ function addBook() {
   console.log(newTitle);
 
   if (newTitle.value != '' && newAuthor.value != '') {
-  // Add the values to the array
-  myLibrary.push({
-    title: newTitle.value,
-    author: newAuthor.value,
-    pages: newPages.value,
-    readStatus: newStatus.value
-  });
-}
+    // Add the values to the array
+    myLibrary.push({
+      title: newTitle.value,
+      author: newAuthor.value,
+      pages: newPages.value,
+      readStatus: newStatus.value
+    });
+  };
   console.log(myLibrary);
+  createBookOverview(myLibrary);
 }
 
 

@@ -18,7 +18,7 @@
 
     <div class="main">
         <div class="addingBook">
-            <form class="addBook"  onsubmit="addBook(); return false;">
+            <form class="addBook" >
                 <label for="booktitle">Book Title:</label>
                 <input type="text" id="booktitle" name="title" required>
                 <label for="author">Author:</label>
@@ -36,10 +36,10 @@
 
 
 
-                <!--create form for adding book to array-->
-                <input type="submit" id="add-book" value="Add Book">
-
-                </button>
+                <!--create form for adding book to array
+                <input type="submit" id="add-book" value="Add Book">-->
+                <button type="button" id="add-book">Add Book</button>
+                
             </form>
         </div>
         <h2 id="overviewTitle">Books in Library</h2>
