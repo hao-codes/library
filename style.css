@@ -73,8 +73,9 @@ body {
     border-color: blue;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding: 0 10% 0 10%;
+    padding: 0 10% 50px 10%;
     gap: 15px;
+    
 }
 
 
@@ -109,10 +110,13 @@ img, #githublogo {
 }
 
 .footer {
-    position: absolute;
-    bottom: 0;
-    text-align: center;
+    position: fixed;
     background-color: white;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0; 
 }
 
 a:link, a:visited {

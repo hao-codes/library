@@ -53,8 +53,6 @@ function createBookOverview(books) {
       <p>Author: ${books[i].author}</p>
       <p>Pages: ${books[i].pages}</p>
       <p> Status: ${books[i].readStatus}</p>
-      <button onclick="updateBookStatus()">Update Status</button>
-      <p>
       <select name="cardStatusUpdate" id="cardStatusUpdate#${i}">
 
       <option value="not"> not started</option>
@@ -62,7 +60,12 @@ function createBookOverview(books) {
       <option value="finished"> finished</option>
 
   </select> 
-  </p>  
+      <button onclick="updateBookStatus()">Update Status</button>
+      <p>
+    
+
+  </p>
+  <button id="deleteCard" onclick="deleteBook()">deleteBook</button>  
     `;
 
     bookTable.appendChild(bookCardDiv);
@@ -95,6 +98,12 @@ function addBook() {
   };
   console.log(myLibrary);
   createBookOverview(myLibrary);
+
+  // clear input fields
+  // newTitle.value = "";
+  // newAuthor.value = "";
+  // newPages.value = "";
+  // newStatus.value = "";
 }
 
 
