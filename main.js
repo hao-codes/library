@@ -9,6 +9,7 @@ function Book(title, author, pages, readStatus) {
   }
   // the constructor...
 }
+
 // add some default books to array to display
 const redRising = new Book("Red Rising", "Pierce Brown", 382, "finished")
 const goldenSon = new Book("Golden Son", "Pierce Brown", 464, "reading")
@@ -21,39 +22,38 @@ const bookTable = document.querySelector(".book-table");
 const addBookButton = document.querySelector("#add-book");
 const deleteBookButton = document.querySelectorAll("#deleteBookButton")
 const updateBookButton = document.querySelectorAll("#updateBookStatus")
-console.log(deleteBookButton);
 
 
 
 function createBookOverview(books) {
-  // loop through array
-  // display books in div class
-  // 4 books per row, if more - create more rows
+  // loop through array & display books in div class
 
   let numberBooks = books.length;
-  let nRows = Math.ceil(numberBooks / 4);
   bookTable.innerHTML = "";
 
   for (let i = 0; i < numberBooks; i++) {
-    //console.log(books[i]);
-    //console.log(typeof(books[i]));
+
     let bookCardDiv = document.createElement("div");
     bookCardDiv.className = "bookcard";
-    //bookCardDiv.classList
+
     bookCardDiv.innerHTML = `
       <h3>${books[i].title}</h3>
+      <div class="bookInfo">
       <p>Author: ${books[i].author}</p>
       <p>Pages: ${books[i].pages}</p>
-      <p> Status: ${books[i].readStatus}</p>
+      <p> Status: </p>
+      <p> ${books[i].readStatus} </p>
+      </div>
+      <div class="updateSelect">
       <select name="cardStatusUpdate" id="cardStatusUpdate#${i}">
       <option value="not started"> not started</option>
       <option value="reading"> reading</option>
       <option value="finished"> finished</option>
-  </select> 
-      <button type="button" id ="updateBookStatus" onclick="updateBookStatus(${i})">Update Status</button>
-      <p>
-  </p>
-  <button id="deleteBookButton" onclick="deleteBook(${i})">Delete Book</button>  
+  </select> <p>
+</p>
+  <button type="button" id ="updateBookStatus" onclick="updateBookStatus(${i})">Update</button>
+</div>
+  <button id="deleteBookButton" onclick="deleteBook(${i})">Delete</button>  
     `;
     bookTable.appendChild(bookCardDiv);
   }
@@ -61,9 +61,9 @@ function createBookOverview(books) {
 }
 createBookOverview(myLibrary);
 
-// create function to add book to array
 
 function addBook() {
+  // function to add book to array
   // Get the input elements
   const newTitle = document.getElementById("booktitle");
   const newAuthor = document.getElementById("author");
@@ -72,7 +72,6 @@ function addBook() {
 
 
   if (newTitle.value != '' && newAuthor.value != '') {
-    // Add the values to the array
     myLibrary.push({
       title: newTitle.value,
       author: newAuthor.value,
@@ -80,7 +79,6 @@ function addBook() {
       readStatus: newStatus.value
     });
   };
-  // console.log(myLibrary);
   createBookOverview(myLibrary);
 
   //clear input fields
@@ -90,29 +88,23 @@ function addBook() {
   newStatus.value = "";
 }
 
-
+// function to delete books from library array
 function deleteBook(bookIndex) {
-  console.log("----");
-  console.log(bookIndex);
   myLibrary.splice(bookIndex, 1);
   createBookOverview(myLibrary);
 }
 
 
 function updateBookStatus(bookIndex) {
-  // TODO function for button to update book status
+  // function update book status
   const updatedStatusSelect = document.getElementById("cardStatusUpdate#" + bookIndex);
   const updatedStatus = updatedStatusSelect.value
-  console.log(bookIndex);
-  console.log(updatedStatus);
-  console.log(updateBookStatus.value);
-  console.log("----");
-  
+
 
   myLibrary[bookIndex].readStatus = updatedStatus;
 
   createBookOverview(myLibrary);
-  // myLibrary[i].readStatus = ""
+
 }
 
 
@@ -122,5 +114,5 @@ function updateBookStatus(bookIndex) {
 // Add a button on each book’s display to change its read status.
 // To facilitate this you will want to create the function that toggles a book’s read status on your Book prototype instance.
 
-console.log(myLibrary);
+
 addBookButton.addEventListener('click', addBook);

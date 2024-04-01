@@ -84,8 +84,10 @@ body {
 }
 
 .bookcard {
+    display: flex;
+    flex-direction: column;
     background-color: white;
-    color: blue;
+    
     border-color: black;
     border-width: 1px;
     border-style: solid;
@@ -103,6 +105,14 @@ button, .add-Button {
     padding: 5px;
     font-size: 16px;
     border-color: black;
+    background-color: white;
+}
+
+
+#deleteBookButton {
+    width: auto;
+    font-size: 16px;
+    margin-top: 18px;
 }
 
 img, #githublogo {
