@@ -10,7 +10,9 @@ body {
     margin: 0%;
 }
 
-.header {}
+.header {
+
+}
 
 .main {
     background-color: white;
@@ -62,9 +64,7 @@ body {
     border-radius: 5px;
 
 }
-.addBook label {
 
-}
 
 .book-table {
 

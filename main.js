@@ -20,11 +20,10 @@ const myLibrary = [redRising, goldenSon, morningStar];
 const bookTable = document.querySelector(".book-table");
 const addBookButton = document.querySelector("#add-book");
 const deleteBookButton = document.querySelectorAll("#deleteBookButton")
+const updateBookButton = document.querySelectorAll("#updateBookStatus")
 console.log(deleteBookButton);
 
-function updateBookStatus() {
-  // TODO function for button to update book status
-}
+
 
 function createBookOverview(books) {
   // loop through array
@@ -36,8 +35,8 @@ function createBookOverview(books) {
   bookTable.innerHTML = "";
 
   for (let i = 0; i < numberBooks; i++) {
-    console.log(books[i]);
-    console.log(typeof(books[i]));
+    //console.log(books[i]);
+    //console.log(typeof(books[i]));
     let bookCardDiv = document.createElement("div");
     bookCardDiv.className = "bookcard";
     //bookCardDiv.classList
@@ -47,11 +46,11 @@ function createBookOverview(books) {
       <p>Pages: ${books[i].pages}</p>
       <p> Status: ${books[i].readStatus}</p>
       <select name="cardStatusUpdate" id="cardStatusUpdate#${i}">
-      <option value="not"> not started</option>
-      <option value="currently"> reading</option>
+      <option value="not started"> not started</option>
+      <option value="reading"> reading</option>
       <option value="finished"> finished</option>
   </select> 
-      <button onclick="updateBookStatus()">Update Status</button>
+      <button type="button" id ="updateBookStatus" onclick="updateBookStatus(${i})">Update Status</button>
       <p>
   </p>
   <button id="deleteBookButton" onclick="deleteBook(${i})">Delete Book</button>  
@@ -81,14 +80,14 @@ function addBook() {
       readStatus: newStatus.value
     });
   };
-  console.log(myLibrary);
+  // console.log(myLibrary);
   createBookOverview(myLibrary);
 
-  // clear input fields
-  // newTitle.value = "";
-  // newAuthor.value = "";
-  // newPages.value = "";
-  // newStatus.value = "";
+  //clear input fields
+  newTitle.value = "";
+  newAuthor.value = "";
+  newPages.value = "";
+  newStatus.value = "";
 }
 
 
@@ -97,6 +96,23 @@ function deleteBook(bookIndex) {
   console.log(bookIndex);
   myLibrary.splice(bookIndex, 1);
   createBookOverview(myLibrary);
+}
+
+
+function updateBookStatus(bookIndex) {
+  // TODO function for button to update book status
+  const updatedStatusSelect = document.getElementById("cardStatusUpdate#" + bookIndex);
+  const updatedStatus = updatedStatusSelect.value
+  console.log(bookIndex);
+  console.log(updatedStatus);
+  console.log(updateBookStatus.value);
+  console.log("----");
+  
+
+  myLibrary[bookIndex].readStatus = updatedStatus;
+
+  createBookOverview(myLibrary);
+  // myLibrary[i].readStatus = ""
 }
 
 
