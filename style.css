@@ -11,7 +11,12 @@ body {
 }
 
 .header {
-
+    text-align: center;
+    border-bottom: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    width: 100%;
 }
 
 .main {
@@ -31,14 +36,16 @@ body {
     border-style: solid;
     border-radius: 13px;
     box-shadow: none;
-    border-color: lightblue;
+    border-color: lightgray;
 }
 
 .addBook {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    row-gap: 5px;
 
 }
 
@@ -87,7 +94,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: white;
-    
+    border-radius: 13px;
     border-color: black;
     border-width: 1px;
     border-style: solid;
@@ -113,6 +120,12 @@ button, .add-Button {
     width: auto;
     font-size: 16px;
     margin-top: 18px;
+}
+
+#updateBookStatus {
+    width: auto;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
 img, #githublogo {

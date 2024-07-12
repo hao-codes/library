@@ -41,16 +41,15 @@ function createBookOverview(books) {
       <div class="bookInfo">
       <p>Author: ${books[i].author}</p>
       <p>Pages: ${books[i].pages}</p>
-      <p> Status: </p>
-      <p> ${books[i].readStatus} </p>
+      <p> Status: ${books[i].readStatus} </p>
+       
       </div>
       <div class="updateSelect">
       <select name="cardStatusUpdate" id="cardStatusUpdate#${i}">
       <option value="not started"> not started</option>
       <option value="reading"> reading</option>
       <option value="finished"> finished</option>
-  </select> <p>
-</p>
+  </select> 
   <button type="button" id ="updateBookStatus" onclick="updateBookStatus(${i})">Update</button>
 </div>
   <button id="deleteBookButton" onclick="deleteBook(${i})">Delete</button>  
